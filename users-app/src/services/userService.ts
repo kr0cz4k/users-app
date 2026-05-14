@@ -14,3 +14,12 @@ export const getUserById = async (
 
   return response.data
 }
+export const getUserPosts = async (userId: string) => {
+  const response = await api.get(`/posts?userId=${userId}`)
+  return response.data
+}
+
+export const getPostComments = async (postId: number) => {
+  const response = await api.get(`/comments?postId=${postId}`)
+  return response.data
+}
